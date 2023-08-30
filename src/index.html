@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="dashboard">
+      <div class="current_lap"></div>
+      <div class="current_passed_time"></div>
+      <div class="current_activity"></div>
+    </div>
+    <div class="btnbar">
+      <button onclick="logger.newLap()">Lap</button>
+      <button onclick="logger.switchActivityType()">Pause</button>
+    </div>
+    <div class="lap"></div>
+  </div>
+</body>
