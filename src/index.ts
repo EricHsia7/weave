@@ -17,4 +17,4 @@ window.weave = function () {
   updateStatus()
 };
 
-export default weave;
+export default window.weave;
