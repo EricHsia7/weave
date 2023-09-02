@@ -15,4 +15,4 @@ function weave() {
   //initialize
 }
 
-export default weave();
+export default weave;

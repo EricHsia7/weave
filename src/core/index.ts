@@ -1,7 +1,7 @@
 var md5 = require('md5');
 const { v4: uuidv4 } = require('uuid');
 
-  export function getDurationAndFormat(t1, t2) {
+export function getDurationAndFormat(t1, t2) {
   function Ym(y) {
     var m_total = 0;
     var m_c = 0;
@@ -93,8 +93,7 @@ const { v4: uuidv4 } = require('uuid');
   }
 
   return string_arr.join('');
-};
-
+}
 
 export class Timeweaver {
   constructor(a) {
@@ -312,6 +311,5 @@ export class Timeweaver {
     this.saveToLocalStorage();
   }
 }
-
 
 updateStatus();
