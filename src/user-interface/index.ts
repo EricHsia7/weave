@@ -52,7 +52,6 @@ function loadFont(url: string, fontName: string, identity: string, loadedCallbac
   var status = weaver.getStatus();
   document.querySelector('.dashboard .current_fabric').innerText = status.fabric;
   document.querySelector('.dashboard .current_passed_time').innerText = getDurationAndFormat(0, status.passed);
-  document.querySelector('.dashboard .current_activity').innerText = status.activity;
   weaver.saveToLocalStorage();
   var f = -1;
   var j = 0;
