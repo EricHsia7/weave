@@ -4,9 +4,9 @@ import { durationToPixel, generateActivityHTML, updateStatus } from './user-inte
 
 import './user-interface/css/index.css';
 
-var weaver;
+ window.weaver = new Timeweaver() ;
 
-function weave() {
+window.weave = function () {
   //initialize
   var t = searchItemsbyname('time_weaver_x_').sort(function (a, b) {
     var a = JSON.parse(String(localStorage.getItem(a))).start;
@@ -14,6 +14,6 @@ function weave() {
     return b - a;
   });
   weaver = new Timeweaver(t.length > 0 ? JSON.parse(String(localStorage.getItem(t[0]))) : new Date());
-}
+};
 
 export default weave;
