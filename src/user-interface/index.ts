@@ -1,10 +1,38 @@
 import { getDurationAndFormat } from '../core/index.ts';
 
 var md5 = require('md5');
-
+var FontFaceObserver = require('fontfaceobserver');
 
 window.fabric_element_update = {};
 window.fabric_activity_element_update = {};
+
+window.lazyCSS = {
+  loaded: {
+    googleFontsNotoSans: false,
+    googleFontsMaterialSymbols: false
+  }
+};
+
+function loadCSS(url: string, identity: string) {
+  if (!window.lazyCSS.loaded[identity]) {
+    var link = document.createElement('link');
+    link.setAttribute('href', url);
+    link.setAttribute('rel', 'stylesheet');
+    document.head.appendChild(link);
+    window.lazyCSS.loaded[identity] = true;
+  }
+}
+
+function loadFont(url: string, fontName: string, identity: string, loadedCallback: Function) {
+  loadCSS(url, identity);
+  if (typeof loadedCallback === 'function') {
+    var font = new FontFaceObserver(fontName);
+    font.load().then(function () {
+      loadedCallback();
+    });
+  }
+}
+
 
 export function durationToPixel(ms: number): number {
   return (ms / 1000 / 60) * 70;
