@@ -1,6 +1,6 @@
 import { Timeweaver, getDurationAndFormat } from './core/index.ts';
 import { searchItemsbyname } from './core/storage.ts';
-import { durationToPixel, generateActivityHTML, updateStatus, updateButtonStatus } from './user-interface/index.ts';
+import interaction from './user-interface/index.ts';
 
 import './user-interface/css/index.css';
 
@@ -36,7 +36,7 @@ window.weave = function () {
     return b - a;
   });
   weaver = new Timeweaver(t.length > 0 ? JSON.parse(String(localStorage.getItem(t[0]))) : new Date());
-  updateStatus();
+  interaction.updateStatus();
   interaction.loadFont('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;500;700&display=swap', 'Noto Sans', 'googleFontsNotoSans');
 };
 
