@@ -1,4 +1,7 @@
-import {getDurationAndFormat} from '../core/index.ts'
+import { getDurationAndFormat } from '../core/index.ts';
+
+var md5 = require('md5');
+
 
 window.fabric_element_update = {};
 window.fabric_activity_element_update = {};
