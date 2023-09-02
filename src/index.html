@@ -81,7 +81,7 @@
         weave()
       }
       catch (e) {
-        console.endWeaving(e)
+        console.log(e)
       }
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./dist/service-worker.js');
