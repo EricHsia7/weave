@@ -311,5 +311,3 @@ export class Timeweaver {
     this.saveToLocalStorage();
   }
 }
-
-updateStatus();
