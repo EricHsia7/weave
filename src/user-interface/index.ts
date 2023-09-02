@@ -33,7 +33,6 @@ function loadFont(url: string, fontName: string, identity: string, loadedCallbac
   }
 }
 
-
 export function durationToPixel(ms: number): number {
   return (ms / 1000 / 60) * 70;
 }
@@ -89,4 +88,12 @@ export function updateStatus(): void {
     });
 
   window.requestAnimationFrame(updateStatus);
+}
+
+export function updateButtonStatus(j) {
+  var element = document.querySelectorAll(`button[j="${j}"]`);
+  if (element.length > 0) {
+    var activity = weaver.getStatus().activity;
+    element[0].innerText = activity.substring(0, 1).toUpperCase() + activity.substring(1);
+  }
 }

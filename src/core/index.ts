@@ -205,12 +205,15 @@ export class Timeweaver {
       }
     }
   }
-  switchActivityType() {
+  switchActivityType(callback) {
     var status = this.getStatus();
     if (status.activity === 'pause') {
       this.continueWeaving();
     } else {
       this.pauseWeaving();
+    }
+    if (typeof callback === 'function') {
+      callback();
     }
   }
   getBlocks(a) {
